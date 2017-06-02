@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.diycheng.gsonstudy.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gson系列"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_primer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="入门"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_map_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Map 和 Set 映射"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/btn_generic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="泛型和Type"
+        android:onClick="onClick"/>
+
+</LinearLayout>
