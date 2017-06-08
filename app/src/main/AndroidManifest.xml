@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".primer.PrimerActivity" />
         <activity android:name=".mapset.MapSetActivity" />
-        <activity android:name=".generic.GenericActivity"></activity>
+        <activity android:name=".generic.GenericActivity" />
+        <activity android:name=".handlenull.HandleNullActivity"></activity>
     </application>
 
 </manifest>

@@ -37,4 +37,11 @@
         android:text="泛型和Type"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/btn_handlenull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="空值处理"
+        android:onClick="onClick"/>
+
 </LinearLayout>
