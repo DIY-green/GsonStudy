@@ -18,5 +18,11 @@
         android:layout_height="wrap_content"
         android:text="SerializedName"
         android:onClick="onClick"/>
+    <Button
+        android:id="@+id/btn_sinceuntil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SerializedName"
+        android:onClick="onClick"/>
 
 </LinearLayout>

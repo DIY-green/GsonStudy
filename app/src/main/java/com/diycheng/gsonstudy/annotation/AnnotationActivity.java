@@ -31,6 +31,11 @@ public class AnnotationActivity extends AppCompatActivity {
                 testSerializedName2();
                 testSerializedName3();
                 break;
+            case R.id.btn_sinceuntil:
+                testSince();
+                testUntil();
+                testSinceUntil();
+                break;
         }
     }
 
@@ -140,6 +145,60 @@ public class AnnotationActivity extends AppCompatActivity {
         Teacher teacher = gson.fromJson(jsonStr, Teacher.class);
         Log.e(TAG, "转出的对象：" + teacher);
         Log.e(TAG, "==========testSerializedName3 End==========");
+    }
+
+    private void testSince() {
+        Log.e(TAG, "==========testSince Start==========");
+        Apple apple = new Apple();
+        apple.color = "RED";
+        apple.name = "红富士";
+        apple.weight = "500g";
+        apple.sinceTest = "@Since(4)";
+        Log.e(TAG, "目标转换对象：" + apple);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        String apple1JsonStr = gsonBuilder.setVersion(2).create().toJson(apple);
+        Log.e(TAG, "setVersion(2) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(4).create().toJson(apple);
+        Log.e(TAG, "setVersion(4) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(6).create().toJson(apple);
+        Log.e(TAG, "setVersion(6) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        Log.e(TAG, "==========testSince End==========");
+    }
+
+    private void testUntil() {
+        Log.e(TAG, "==========testUntil Start==========");
+        Apple apple = new Apple();
+        apple.color = "Green";
+        apple.name = "红富士";
+        apple.weight = "500g";
+        apple.untilTest = "@Until(5)";
+        Log.e(TAG, "目标转换对象：" + apple);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        String apple1JsonStr = gsonBuilder.setVersion(2).create().toJson(apple);
+        Log.e(TAG, "setVersion(2) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(4).create().toJson(apple);
+        Log.e(TAG, "setVersion(4) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(6).create().toJson(apple);
+        Log.e(TAG, "setVersion(6) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        Log.e(TAG, "==========testUntil End==========");
+    }
+
+    private void testSinceUntil() {
+        Log.e(TAG, "==========testSinceUntil Start==========");
+        Apple apple = new Apple();
+        apple.color = "Yellow";
+        apple.name = "红富士";
+        apple.weight = "500g";
+        apple.sinceUntil = "@Since(3)@Until(5)";
+        Log.e(TAG, "目标转换对象：" + apple);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        String apple1JsonStr = gsonBuilder.setVersion(2).create().toJson(apple);
+        Log.e(TAG, "setVersion(2) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(4).create().toJson(apple);
+        Log.e(TAG, "setVersion(4) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        apple1JsonStr = gsonBuilder.setVersion(6).create().toJson(apple);
+        Log.e(TAG, "setVersion(6) 时 得到的 JSON 串：\n" + apple1JsonStr);
+        Log.e(TAG, "==========testSinceUntil End==========");
     }
 
 }
