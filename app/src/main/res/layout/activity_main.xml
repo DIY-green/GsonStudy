@@ -51,4 +51,11 @@
         android:text="注解"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/btn_field_naming_policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="命名规则"
+        android:onClick="onClick"/>
+
 </LinearLayout>

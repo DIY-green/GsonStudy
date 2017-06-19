@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diycheng.gsonstudy.annotation.AnnotationActivity;
+import com.diycheng.gsonstudy.fieldnamingpolicy.FieldNamingPolicyActivity;
 import com.diycheng.gsonstudy.generic.GenericActivity;
 import com.diycheng.gsonstudy.handlenull.HandleNullActivity;
 import com.diycheng.gsonstudy.mapset.MapSetActivity;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_annotation:
                 NavigationManager.overlay(this, AnnotationActivity.class);
+                break;
+            case R.id.btn_field_naming_policy:
+                NavigationManager.overlay(this, FieldNamingPolicyActivity.class);
                 break;
         }
     }

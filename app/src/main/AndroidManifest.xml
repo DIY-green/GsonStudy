@@ -20,7 +20,8 @@
         <activity android:name=".mapset.MapSetActivity" />
         <activity android:name=".generic.GenericActivity" />
         <activity android:name=".handlenull.HandleNullActivity" />
-        <activity android:name=".annotation.AnnotationActivity"></activity>
+        <activity android:name=".annotation.AnnotationActivity" />
+        <activity android:name=".fieldnamingpolicy.FieldNamingPolicyActivity"></activity>
     </application>
 
 </manifest>
