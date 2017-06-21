@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diycheng.gsonstudy.annotation.AnnotationActivity;
+import com.diycheng.gsonstudy.exclusionstrategy.ExclusionStrategyActivity;
 import com.diycheng.gsonstudy.fieldnamingpolicy.FieldNamingPolicyActivity;
 import com.diycheng.gsonstudy.generic.GenericActivity;
 import com.diycheng.gsonstudy.handlenull.HandleNullActivity;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_field_naming_policy:
                 NavigationManager.overlay(this, FieldNamingPolicyActivity.class);
+                break;
+            case R.id.btn_exclusion_strategy:
+                NavigationManager.overlay(this, ExclusionStrategyActivity.class);
                 break;
         }
     }

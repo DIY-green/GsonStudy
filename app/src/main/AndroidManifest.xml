@@ -21,7 +21,8 @@
         <activity android:name=".generic.GenericActivity" />
         <activity android:name=".handlenull.HandleNullActivity" />
         <activity android:name=".annotation.AnnotationActivity" />
-        <activity android:name=".fieldnamingpolicy.FieldNamingPolicyActivity"></activity>
+        <activity android:name=".fieldnamingpolicy.FieldNamingPolicyActivity" />
+        <activity android:name=".exclusionstrategy.ExclusionStrategyActivity"></activity>
     </application>
 
 </manifest>

@@ -58,4 +58,11 @@
         android:text="命名规则"
         android:onClick="onClick"/>
 
+    <Button
+        android:id="@+id/btn_exclusion_strategy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="忽略策略"
+        android:onClick="onClick"/>
+
 </LinearLayout>
