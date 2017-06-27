@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diycheng.gsonstudy.annotation.AnnotationActivity;
+import com.diycheng.gsonstudy.enumtest.EnumTestActivity;
 import com.diycheng.gsonstudy.exclusionstrategy.ExclusionStrategyActivity;
 import com.diycheng.gsonstudy.faulttolerant.FaultTolerantActivity;
 import com.diycheng.gsonstudy.fieldnamingpolicy.FieldNamingPolicyActivity;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_fault_tolerant:
                 NavigationManager.overlay(this, FaultTolerantActivity.class);
+                break;
+            case R.id.btn_enum_test:
+                NavigationManager.overlay(this, EnumTestActivity.class);
                 break;
         }
     }
