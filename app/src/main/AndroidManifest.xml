@@ -22,7 +22,8 @@
         <activity android:name=".handlenull.HandleNullActivity" />
         <activity android:name=".annotation.AnnotationActivity" />
         <activity android:name=".fieldnamingpolicy.FieldNamingPolicyActivity" />
-        <activity android:name=".exclusionstrategy.ExclusionStrategyActivity"></activity>
+        <activity android:name=".exclusionstrategy.ExclusionStrategyActivity" />
+        <activity android:name=".faulttolerant.FaultTolerantActivity"></activity>
     </application>
 
 </manifest>
