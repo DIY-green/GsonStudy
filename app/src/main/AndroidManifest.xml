@@ -24,7 +24,8 @@
         <activity android:name=".fieldnamingpolicy.FieldNamingPolicyActivity" />
         <activity android:name=".exclusionstrategy.ExclusionStrategyActivity" />
         <activity android:name=".faulttolerant.FaultTolerantActivity" />
-        <activity android:name=".enumtest.EnumTestActivity"></activity>
+        <activity android:name=".enumtest.EnumTestActivity" />
+        <activity android:name=".fixbugs.FixBugsActivity"></activity>
     </application>
 
 </manifest>

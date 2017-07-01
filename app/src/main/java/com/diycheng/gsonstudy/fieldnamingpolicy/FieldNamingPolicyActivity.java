@@ -196,7 +196,7 @@ public class FieldNamingPolicyActivity extends AppCompatActivity {
     }
 
     private void testCustomFieldNamingStrategy() {
-        Log.e(TAG, "==========testUPPER_CAMEL_CASE_WITH_SPACES Start==========");
+        Log.e(TAG, "==========testCustomFieldNamingStrategy Start==========");
         UserInfo2 userInfo = new UserInfo2();
         userInfo._age = 37;
         userInfo._nick_name = "Test Gson";
@@ -213,7 +213,7 @@ public class FieldNamingPolicyActivity extends AppCompatActivity {
         Log.e(TAG, "得到的 JSON 串：" + userInfoJson);
         UserInfo userInfo1 = gson.fromJson(userInfoJson, UserInfo.class);
         Log.e(TAG, "==>转出的对象：" + userInfo1);
-        Log.e(TAG, "==========testUPPER_CAMEL_CASE_WITH_SPACES End==========");
+        Log.e(TAG, "==========testCustomFieldNamingStrategy End==========");
     }
 
 }

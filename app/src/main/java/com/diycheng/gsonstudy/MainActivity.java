@@ -9,6 +9,7 @@ import com.diycheng.gsonstudy.enumtest.EnumTestActivity;
 import com.diycheng.gsonstudy.exclusionstrategy.ExclusionStrategyActivity;
 import com.diycheng.gsonstudy.faulttolerant.FaultTolerantActivity;
 import com.diycheng.gsonstudy.fieldnamingpolicy.FieldNamingPolicyActivity;
+import com.diycheng.gsonstudy.fixbugs.FixBugsActivity;
 import com.diycheng.gsonstudy.generic.GenericActivity;
 import com.diycheng.gsonstudy.handlenull.HandleNullActivity;
 import com.diycheng.gsonstudy.mapset.MapSetActivity;
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_enum_test:
                 NavigationManager.overlay(this, EnumTestActivity.class);
+                break;
+            case R.id.btn_fix_bugs:
+                NavigationManager.overlay(this, FixBugsActivity.class);
                 break;
         }
     }
