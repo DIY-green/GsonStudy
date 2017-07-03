@@ -25,7 +25,9 @@
         <activity android:name=".exclusionstrategy.ExclusionStrategyActivity" />
         <activity android:name=".faulttolerant.FaultTolerantActivity" />
         <activity android:name=".enumtest.EnumTestActivity" />
-        <activity android:name=".fixbugs.FixBugsActivity"></activity>
+        <activity android:name=".fixbugs.FixBugsActivity" />
+        <activity android:name=".serialize.SerializerActivity" />
+        <activity android:name=".deserialize.DeserializerActivity"></activity>
     </application>
 
 </manifest>

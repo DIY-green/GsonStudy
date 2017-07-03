@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.diycheng.gsonstudy.annotation.AnnotationActivity;
+import com.diycheng.gsonstudy.deserialize.DeserializerActivity;
 import com.diycheng.gsonstudy.enumtest.EnumTestActivity;
 import com.diycheng.gsonstudy.exclusionstrategy.ExclusionStrategyActivity;
 import com.diycheng.gsonstudy.faulttolerant.FaultTolerantActivity;
@@ -14,6 +15,7 @@ import com.diycheng.gsonstudy.generic.GenericActivity;
 import com.diycheng.gsonstudy.handlenull.HandleNullActivity;
 import com.diycheng.gsonstudy.mapset.MapSetActivity;
 import com.diycheng.gsonstudy.primer.PrimerActivity;
+import com.diycheng.gsonstudy.serialize.SerializerActivity;
 import com.diycheng.gsonstudy.util.NavigationManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_fix_bugs:
                 NavigationManager.overlay(this, FixBugsActivity.class);
+                break;
+            case R.id.btn_serializer:
+                NavigationManager.overlay(this, SerializerActivity.class);
+                break;
+            case R.id.btn_deserializer:
+                NavigationManager.overlay(this, DeserializerActivity.class);
                 break;
         }
     }
