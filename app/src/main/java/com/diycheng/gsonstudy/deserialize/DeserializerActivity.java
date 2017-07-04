@@ -25,7 +25,20 @@ public class DeserializerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deserializer);
 
+        testTO2VO();
         testRegisterTypeAdapter1();
+    }
+
+    private void testTO2VO() {
+        Log.e(TAG, "==========testTO2VO Start==========");
+        String weatherJson = "{'status': 'ok','now': \n {'cond':  \n {'code': '100','txt': '晴'}, \n 'fl': '30','hum': '20%','pcpn': '0.0','pres': '1001','tmp': '32','vis': '10','wind':  \n {'deg': '10','dir': '北风','sc': '3级','spd': '15'}}}";
+        Log.e(TAG, "原始 JSON 串：\n" + weatherJson);
+        Gson gson = new Gson();
+        WeatherTO weatherTO = gson.fromJson(weatherJson, WeatherTO.class);
+        WeatherVO weatherVO = new WeatherVO(weatherTO);
+        Log.e(TAG, "转出的TO对象：\n" + weatherTO);
+        Log.e(TAG, "转出的VO对象：\n" + weatherVO);
+        Log.e(TAG, "==========testTO2VO End==========");
     }
 
     private void testRegisterTypeAdapter1() {
