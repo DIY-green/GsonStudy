@@ -27,6 +27,7 @@ public class DeserializerActivity extends AppCompatActivity {
 
         testTO2VO();
         testRegisterTypeAdapter1();
+        testRegisterTypeAdapter2();
     }
 
     private void testTO2VO() {
@@ -69,5 +70,23 @@ public class DeserializerActivity extends AppCompatActivity {
         UserData userData = gson.fromJson(userDataJson, UserData.class);
         Log.e(TAG, "转出的对象：" + userData);
         Log.e(TAG, "==========testRegisterTypeAdapter1 End==========");
+    }
+
+    private void testRegisterTypeAdapter2() {
+        Log.e(TAG, "==========testRegisterTypeAdapter2 Start==========");
+        UserContext userContext = new UserContext(getApplicationContext());
+        userContext.age = 18;
+        userContext.email = "XiaoMing@gmail.com";
+        userContext.isDeveloper = false;
+        userContext.name = "XiaoMing";
+        Gson gson = new Gson();
+        String userContextJson = gson.toJson(userContext);
+        Log.e(TAG, "原始 JSON 串：\n" + userContextJson);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(UserContext.class, new UserContextInstanceCreator(getApplicationContext()));
+        Gson customGson = gsonBuilder.create();
+        UserContext customUserContext = customGson.fromJson(userContextJson, UserContext.class);
+        Log.e(TAG, "转出的对象：\n" + customUserContext);
+        Log.e(TAG, "==========testRegisterTypeAdapter2 End==========");
     }
 }
