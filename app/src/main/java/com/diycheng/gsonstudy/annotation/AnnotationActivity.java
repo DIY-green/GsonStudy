@@ -6,12 +6,24 @@ import android.util.Log;
 import android.view.View;
 
 import com.diycheng.gsonstudy.R;
+import com.diycheng.gsonstudy.annotation.jsonadapter.Merchant;
+import com.diycheng.gsonstudy.annotation.jsonadapter.MerchantListSerializer;
+import com.diycheng.gsonstudy.annotation.jsonadapter.UserData;
+import com.diycheng.gsonstudy.annotation.jsonadapter.UserDataDeserializer;
+import com.diycheng.gsonstudy.annotation.jsonadapter.UserSubscription;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AnnotationActivity extends AppCompatActivity {
 
     private static final String TAG = "Annotation";
+
+    private Gson mDefaultGson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +47,10 @@ public class AnnotationActivity extends AppCompatActivity {
                 testSince();
                 testUntil();
                 testSinceUntil();
+                break;
+            case R.id.btn_jsonadapter:
+                testJsonAdapter1();
+                testJsonAdapter2();
                 break;
         }
     }
@@ -199,6 +215,49 @@ public class AnnotationActivity extends AppCompatActivity {
         apple1JsonStr = gsonBuilder.setVersion(6).create().toJson(apple);
         Log.e(TAG, "setVersion(6) 时 得到的 JSON 串：\n" + apple1JsonStr);
         Log.e(TAG, "==========testSinceUntil End==========");
+    }
+
+    private void testJsonAdapter1() {
+        Log.e(TAG, "==========testJsonAdapter1 Start==========");
+        UserSubscription subscription = new UserSubscription();
+        subscription.age = 18;
+        subscription.email = "xiaoming@gmail.com";
+        subscription.isDeveloper = false;
+        subscription.name = "xiaoming";
+        List<Merchant> merchantList = new ArrayList<>();
+        Merchant m1 = new Merchant();
+        m1.Id = 11;
+        m1.name = "KFC";
+        merchantList.add(m1);
+        Merchant m2 = new Merchant();
+        m2.Id = 22;
+        m2.name = "Coffee Shop";
+        merchantList.add(m2);
+        subscription.merchantList = merchantList;
+        Log.e(TAG, "目标转换对象：" + subscription);
+        Type merchantListType = new TypeToken<List<Merchant>>(){}.getType();
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(merchantListType, new MerchantListSerializer());
+        Gson gson = gsonBuilder.create();
+        String userSubJson1 = gson.toJson(subscription);
+        String userSubJson2 = mDefaultGson.toJson(subscription);
+        Log.e(TAG, "使用自定义序列化器生成Gson得到的 JSON 串：\n" + userSubJson1);
+        Log.e(TAG, "使用默认Gson+JSonAdapter注解得到的 JSON 串：" + "\n" + userSubJson2);
+        Log.e(TAG, "==========testJsonAdapter1 End==========");
+    }
+
+    private void testJsonAdapter2() {
+        Log.e(TAG, "==========testJsonAdapter2 Start==========");
+        String userDataJson = "{'year': 117,'month': 6,'day': 2,'age': 18,'email': 'xiaoming@gmail.com','isDeveloper': true,'name': 'XiaoMing'}";
+        Log.e(TAG, "原始 JSON 串：" + userDataJson);
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(UserData.class, new UserDataDeserializer());
+        Gson gson = gsonBuilder.create();
+        UserData userData1 = gson.fromJson(userDataJson, UserData.class);
+        UserData userData2 = mDefaultGson.fromJson(userDataJson, UserData.class);
+        Log.e(TAG, "使用自定义反序列化器生成Gson转出的对象：\n" + userData1);
+        Log.e(TAG, "使用默认Gson+JSonAdapter转出的对象：\n" + userData2);
+        Log.e(TAG, "==========testJsonAdapter2 End==========");
     }
 
 }

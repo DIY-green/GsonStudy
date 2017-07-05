@@ -22,7 +22,13 @@
         android:id="@+id/btn_sinceuntil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SerializedName"
+        android:text="SinceUntil"
         android:onClick="onClick"/>
+    <Button
+            android:id="@+id/btn_jsonadapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JsonAdapter"
+            android:onClick="onClick"/>
 
 </LinearLayout>

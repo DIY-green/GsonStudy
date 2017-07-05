@@ -5,6 +5,7 @@ import com.google.gson.annotations.Until;
 
 /**
  * Created by liwangcheng on 2017/6/14 09:18.
+ * 演示 Since 和 Until
  */
 
 public class Apple {

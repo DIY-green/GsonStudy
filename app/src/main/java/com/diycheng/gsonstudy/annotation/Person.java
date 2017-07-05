@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 
 /**
  * Created by liwangcheng on 2017/6/8 09:49.
+ * 演示 Expose
  */
 
 public class Person {

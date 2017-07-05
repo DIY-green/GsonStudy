@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by liwangcheng on 2017/6/12 09:35.
+ * 演示 SerializedName
  */
 
 public class Teacher {
