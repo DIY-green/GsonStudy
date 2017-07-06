@@ -27,7 +27,8 @@
         <activity android:name=".enumtest.EnumTestActivity" />
         <activity android:name=".fixbugs.FixBugsActivity" />
         <activity android:name=".serialize.SerializerActivity" />
-        <activity android:name=".deserialize.DeserializerActivity"></activity>
+        <activity android:name=".deserialize.DeserializerActivity" />
+        <activity android:name=".streamapi.StreamApiActivity"></activity>
     </application>
 
 </manifest>

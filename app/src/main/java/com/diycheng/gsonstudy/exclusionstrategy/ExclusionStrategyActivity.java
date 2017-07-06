@@ -98,11 +98,13 @@ public class ExclusionStrategyActivity extends AppCompatActivity {
         gsonBuilder.setExclusionStrategies(new ExclusionStrategy() {
             @Override
             public boolean shouldSkipField(FieldAttributes f) {
+                // 这里作判断，决定要不要排除该字段,return true为排除
                 return false;
             }
 
             @Override
             public boolean shouldSkipClass(Class<?> clazz) {
+                // 直接排除某个类 ，return true为排除
                 return clazz == int.class;
             }
         });
