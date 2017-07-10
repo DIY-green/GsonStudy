@@ -30,7 +30,9 @@ public class StreamApiActivity extends AppCompatActivity {
     }
 
     private void testJsonReader() {
+        Log.e(TAG, "==========testJsonReader Start==========");
         String userJson =  "{\"name\":\"XiaoMing\",\"age\":\"18\",\"profession\":\"Student\"}";
+        Log.e(TAG, "原始 JSON 串：" + userJson);
         User user = new User();
         JsonReader reader = new JsonReader(new StringReader(userJson));
         try {
@@ -47,6 +49,8 @@ public class StreamApiActivity extends AppCompatActivity {
                     case "profession":
                         user.profession = reader.nextString();
                         break;
+                    default:
+                        break;
                 }
             }
         } catch (IOException e) {
@@ -58,14 +62,17 @@ public class StreamApiActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        Log.e(TAG, user.toString());
+        Log.e(TAG, "转出的对象：" + user);
+        Log.e(TAG, "==========testJsonReader End==========");
     }
 
     private void testToJson() {
+        Log.e(TAG, "==========testToJson Start==========");
         Gson gson = new Gson();
         User user = new User("LiMing", 24, "Teacher");
-        gson.toJson(user, System.out); // 写到控制台
-        System.out.println();
+        Log.e(TAG, "目标转换对象：" + user);
+        gson.toJson(user, System.err); // 写到控制台
+        System.err.println();
         JsonWriter writer = new JsonWriter(new OutputStreamWriter(System.out));
         try {
             writer.beginObject()
@@ -78,6 +85,8 @@ public class StreamApiActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+//        Log.e(TAG, "得到的 JSON 串：" + userJson);
+        Log.e(TAG, "==========testToJson End==========");
     }
 
     private void testOther() {

@@ -28,7 +28,9 @@
         <activity android:name=".fixbugs.FixBugsActivity" />
         <activity android:name=".serialize.SerializerActivity" />
         <activity android:name=".deserialize.DeserializerActivity" />
-        <activity android:name=".streamapi.StreamApiActivity"></activity>
+        <activity android:name=".streamapi.StreamApiActivity" />
+        <activity android:name=".typeadapter.TypeAdapterActivity" />
+        <activity android:name=".bestpractice.BestPracticeActivity"></activity>
     </application>
 
 </manifest>

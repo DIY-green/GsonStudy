@@ -17,6 +17,7 @@ import com.diycheng.gsonstudy.mapset.MapSetActivity;
 import com.diycheng.gsonstudy.primer.PrimerActivity;
 import com.diycheng.gsonstudy.serialize.SerializerActivity;
 import com.diycheng.gsonstudy.streamapi.StreamApiActivity;
+import com.diycheng.gsonstudy.typeadapter.TypeAdapterActivity;
 import com.diycheng.gsonstudy.util.NavigationManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_streamapi:
                 NavigationManager.overlay(this, StreamApiActivity.class);
+                break;
+            case R.id.btn_typeadapter:
+                NavigationManager.overlay(this, TypeAdapterActivity.class);
+                break;
+            default:
                 break;
         }
     }
